@@ -29,7 +29,7 @@ while guess != secret :
     elif guess < secret :
         print('{} is too low '.format(guess))
     else :
-        print('You got it in {} guesses'.format(nog))
+        print('You got it, {} is right in and it only took you {} guesses'.format(guess,nog))
 
 print_header_line(ds)
 print('Done')
