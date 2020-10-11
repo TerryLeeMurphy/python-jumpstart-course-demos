@@ -27,6 +27,19 @@ def user_input():
     birthday = datetime.date(year, month, day)
     return birthday
 
+def days_between_dates(orig, target):
+    this_year = datetime.date(target.year, orig.month, orig.day)
+    t1 = this_year - target
+    return t1.days
+
+def user_output(days):
+    if days > 0:
+        message = "{} days til your birthday".format(days)
+    elif days < 0:
+        message = "{} days since your birthday".format(-days)
+    else:
+        message = "Today is your Birthday, Happy Birthday"
+    return message
 
 def main():
     ds = 72                             # Screen Console Width
@@ -34,8 +47,20 @@ def main():
     dashes_line(ds)
     print_header(title,ds)
     dashes_line(ds)
-    birthday = user_input()
-    print(birthday)
+    # birthday = user_input()
+
+    today = datetime.date.today()
+    # verify my functions here ...
+    birthday = datetime.date(1965, 8, 27)
+    days = days_between_dates(birthday, today)
+    print(user_output(days))
+    birthday = datetime.date(1965, 10, 3)
+    days = days_between_dates(birthday, today)
+    print(user_output(days))
+    birthday = datetime.date(1965, 12, 28)
+    days = days_between_dates(birthday, today)
+    print(user_output(days))
+
 
 
 main()
