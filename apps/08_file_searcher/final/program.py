@@ -78,6 +78,7 @@ def search_folders(folder, text):
 
 def search_file(filename, search_text):
 
+
     # NOTE: We haven't discussed error handling yet, but we
     # cover it shortly. However, some folks have been running
     # into errors where this is passed a binary file and crashes.
